@@ -3,7 +3,6 @@
 
 namespace harrytang\bootstrapsocial;
 
-use vendor\harrytang\bootstrapsocial\Asset;
 use Yii;
 
 class Widget extends \yii\base\Widget
