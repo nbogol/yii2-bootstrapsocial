@@ -3,6 +3,7 @@
  * @author: Harry Tang (giaduy@gmail.com)
  * @link: http://www.greyneuron.com
  * @copyright: Grey Neuron
+ * http://lipis.github.io/bootstrap-social/
  */
 
 namespace harrytang\bootstrapsocial;
@@ -11,10 +12,12 @@ use yii\helpers\Html;
 
 class Button extends Widget
 {
-    /**
-     * @var string the tag to use to render the button
-     */
-    public $tagName = 'button';
+
+    public $iconOnly=false;
+
+    public $button='';
+    public $link='#';
+
     /**
      * @var string the button label
      */
@@ -32,9 +35,21 @@ class Button extends Widget
     public function init()
     {
         parent::init();
+        $this->register();
 
+        /* link */
+        $this->options=['href'=>$this->link];
 
-        Html::addCssClass($this->options, 'btn btn-social');
+        $class='btn-block btn-social btn-'.$this->button;
+        if($this->iconOnly)
+        {
+            $class='btn-social-icon btn-'.$this->button;
+        }
+        if($this->encodeLabel)
+        {
+            $this->label=Html::encode($this->label);
+        }
+        Html::addCssClass($this->options, 'btn '.$class);
 
     }
 
@@ -43,8 +58,12 @@ class Button extends Widget
      */
     public function run()
     {
-        echo Html::tag($this->tagName, $this->encodeLabel ? Html::encode($this->label) : $this->label, $this->options);
-        $this->register();
+
+            echo Html::beginTag('a', $this->options);
+            echo Html::tag('i', '', ['class'=>'fa fa-'.$this->button]);
+            echo $this->iconOnly?'':$this->label;
+            echo Html::endTag('a');
+
     }
 
 } 
