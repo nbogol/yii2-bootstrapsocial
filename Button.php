@@ -33,7 +33,9 @@ class Button extends Widget
     {
         parent::init();
 
+
         Html::addCssClass($this->options, 'btn btn-social');
+
     }
 
     /**
