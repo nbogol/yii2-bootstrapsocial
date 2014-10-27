@@ -3,8 +3,6 @@
 
 namespace harrytang\bootstrapsocial;
 
-use vendor\harrytang\bootstrapsocial\Asset;
-use Yii;
 
 class Widget extends \yii\base\Widget
 {
@@ -19,7 +17,7 @@ class Widget extends \yii\base\Widget
     {
         $view = $this->getView();
 
-        Asset::register($view);
+        BootstrapsocialAsset::register($view);
 
 
     }

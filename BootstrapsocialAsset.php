@@ -5,15 +5,18 @@
  * @copyright: Grey Neuron
  */
 
-namespace vendor\harrytang\bootstrapsocial;
+namespace harrytang\bootstrapsocial;
 
 
 use yii\web\AssetBundle;
 
-class Asset extends AssetBundle {
+class BootstrapsocialAsset extends AssetBundle {
     public $sourcePath = '@bower/bootstrap-social';
     public $css = [
         'bootstrap-social.css',
+    ];
+    public $depends = [
+        'yii\bootstrap\BootstrapAsset',
     ];
 
 } 
