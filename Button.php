@@ -38,7 +38,8 @@ class Button extends Widget
         $this->register();
 
         /* link */
-        $this->options=['href'=>$this->link];
+        $this->options=array_merge($this->options, ['href'=>$this->link]);
+
 
         $class='btn-block btn-social btn-'.$this->button;
         if($this->iconOnly)
