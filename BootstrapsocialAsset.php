@@ -11,7 +11,7 @@ namespace harrytang\bootstrapsocial;
 use yii\web\AssetBundle;
 
 class BootstrapsocialAsset extends AssetBundle {
-    public $sourcePath = '@bower/bootstrap-social';
+    public $sourcePath = '@vendor/harrytang/yii2-bootstrapsocial/assets';
     public $css = [
         'bootstrap-social.css',
     ];
